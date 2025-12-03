@@ -1,0 +1,32 @@
+data:
+  raw_csv: "data/raw/Articles.csv"
+  processed_dir: "data/processed"
+  results_dir: "results"
+
+bm25:
+  k1: 1.5
+  b: 0.75
+
+neural:
+  model_name: "all-MiniLM-L6-v2"
+
+retrieval:
+  top_k_candidates: 100
+  final_top_k: 10
+
+hybrid:
+  alpha: 0.5
+
+preprocessing:
+  use_stopwords: true
+  use_stemming: false
+  use_lemmatization: true
+
+cache:
+  enabled: true
+  capacity: 100
+
+evaluation:
+  ablation:
+    test_preprocessing: true
+    test_bm25_params: true

@@ -1,0 +1,68 @@
+================================================================================
+HYBRID IR SYSTEM EVALUATION REPORT
+================================================================================
+
+SYSTEM CONFIGURATION
+--------------------------------------------------------------------------------
+Number of documents: 2692
+BM25 parameters: k1=1.5, b=1.0
+Hybrid alpha: 0.5
+Cache hit rate: 0.00%
+
+ABLATION STUDY RESULTS
+--------------------------------------------------------------------------------
+
+Full (Stopwords + Lemma):
+  With Reranking:
+    MAP: 0.0833
+    MRR: 0.2500
+    P@10: 0.0250
+  Without Reranking:
+    MAP: 0.0833
+    MRR: 0.2500
+    P@10: 0.0250
+  MAP Improvement: +0.00%
+
+No Stopwords:
+  With Reranking:
+    MAP: 0.0833
+    MRR: 0.2500
+    P@10: 0.0250
+  Without Reranking:
+    MAP: 0.0833
+    MRR: 0.2500
+    P@10: 0.0250
+  MAP Improvement: +0.00%
+
+Stemming:
+  With Reranking:
+    MAP: 0.0833
+    MRR: 0.2500
+    P@10: 0.0250
+  Without Reranking:
+    MAP: 0.0833
+    MRR: 0.2500
+    P@10: 0.0250
+  MAP Improvement: +0.00%
+
+No Processing:
+  With Reranking:
+    MAP: 0.0833
+    MRR: 0.2500
+    P@10: 0.0250
+  Without Reranking:
+    MAP: 0.0833
+    MRR: 0.2500
+    P@10: 0.0250
+  MAP Improvement: +0.00%
+
+
+BM25 PARAMETER TUNING
+--------------------------------------------------------------------------------
+
+Best Configuration: k1=1.2, b=0.75
+  MAP: 0.0833
+  MRR: 0.2500
+  P@10: 0.0250
+
+================================================================================

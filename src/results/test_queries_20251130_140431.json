@@ -1,0 +1,25 @@
+[
+  {
+    "query": "pak",
+    "relevant_docs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  {
+    "query": "shehram",
+    "relevant_docs": []
+  },
+  {
+    "query": "me",
+    "relevant_docs": []
+  }
+]

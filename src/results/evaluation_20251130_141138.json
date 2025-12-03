@@ -1,0 +1,226 @@
+{
+  "timestamp": "2025-11-30T14:04:31.253665",
+  "config": {
+    "data": {
+      "raw_csv": "/Users/shehrambaig/PycharmProjects/Search-engine/data/raw/Articles.csv",
+      "processed_dir": "data/processed",
+      "results_dir": "results"
+    },
+    "bm25": {
+      "k1": 1.5,
+      "b": 0.75
+    },
+    "neural": {
+      "model_name": "all-MiniLM-L6-v2"
+    },
+    "hybrid": {
+      "alpha": 0.5
+    },
+    "retrieval": {
+      "top_k_candidates": 100,
+      "final_top_k": 10
+    },
+    "cache": {
+      "enabled": true,
+      "capacity": 100
+    },
+    "preprocessing": {
+      "use_stopwords": true,
+      "use_stemming": false,
+      "use_lemmatization": true
+    },
+    "evaluation": {
+      "ablation": {
+        "test_preprocessing": true,
+        "test_bm25_params": true
+      }
+    }
+  },
+  "num_test_queries": 3,
+  "baseline_bm25": {
+    "mean_precision@5": 0.0,
+    "mean_precision@10": 0.0,
+    "mean_recall@10": 0.0,
+    "MAP": 0.0,
+    "MRR": 0.0,
+    "avg_query_time": 0.0152128537495931,
+    "total_queries": 3,
+    "use_reranking": false
+  },
+  "hybrid": {
+    "mean_precision@5": 0.0,
+    "mean_precision@10": 0.0,
+    "mean_recall@10": 0.0,
+    "MAP": 0.0,
+    "MRR": 0.0,
+    "avg_query_time": 3.107321341832479,
+    "total_queries": 3,
+    "use_reranking": true
+  },
+  "ablation_study": {
+    "Full (Stopwords + Lemma)": {
+      "config": {
+        "name": "Full (Stopwords + Lemma)",
+        "stopwords": true,
+        "stemming": false,
+        "lemma": true
+      },
+      "with_reranking": {
+        "mean_precision@5": 0.0,
+        "mean_precision@10": 0.0,
+        "mean_recall@10": 0.0,
+        "MAP": 0.0,
+        "MRR": 0.0,
+        "avg_query_time": 0.4771910508473714,
+        "total_queries": 3,
+        "use_reranking": true
+      },
+      "without_reranking": {
+        "mean_precision@5": 0.0,
+        "mean_precision@10": 0.0,
+        "mean_recall@10": 0.0,
+        "MAP": 0.0,
+        "MRR": 0.0,
+        "avg_query_time": 0.0028416315714518228,
+        "total_queries": 3,
+        "use_reranking": false
+      }
+    },
+    "No Stopwords": {
+      "config": {
+        "name": "No Stopwords",
+        "stopwords": false,
+        "stemming": false,
+        "lemma": true
+      },
+      "with_reranking": {
+        "mean_precision@5": 0.0,
+        "mean_precision@10": 0.0,
+        "mean_recall@10": 0.0,
+        "MAP": 0.0,
+        "MRR": 0.0,
+        "avg_query_time": 0.6133532524108887,
+        "total_queries": 3,
+        "use_reranking": true
+      },
+      "without_reranking": {
+        "mean_precision@5": 0.0,
+        "mean_precision@10": 0.0,
+        "mean_recall@10": 0.0,
+        "MAP": 0.0,
+        "MRR": 0.0,
+        "avg_query_time": 0.005258003870646159,
+        "total_queries": 3,
+        "use_reranking": false
+      }
+    },
+    "Stemming": {
+      "config": {
+        "name": "Stemming",
+        "stopwords": true,
+        "stemming": true,
+        "lemma": false
+      },
+      "with_reranking": {
+        "mean_precision@5": 0.0,
+        "mean_precision@10": 0.0,
+        "mean_recall@10": 0.0,
+        "MAP": 0.0,
+        "MRR": 0.0,
+        "avg_query_time": 0.5788594881693522,
+        "total_queries": 3,
+        "use_reranking": true
+      },
+      "without_reranking": {
+        "mean_precision@5": 0.0,
+        "mean_precision@10": 0.0,
+        "mean_recall@10": 0.0,
+        "MAP": 0.0,
+        "MRR": 0.0,
+        "avg_query_time": 0.0015583038330078125,
+        "total_queries": 3,
+        "use_reranking": false
+      }
+    },
+    "No Processing": {
+      "config": {
+        "name": "No Processing",
+        "stopwords": false,
+        "stemming": false,
+        "lemma": false
+      },
+      "with_reranking": {
+        "mean_precision@5": 0.0,
+        "mean_precision@10": 0.0,
+        "mean_recall@10": 0.0,
+        "MAP": 0.0,
+        "MRR": 0.0,
+        "avg_query_time": 0.48271600405375165,
+        "total_queries": 3,
+        "use_reranking": true
+      },
+      "without_reranking": {
+        "mean_precision@5": 0.0,
+        "mean_precision@10": 0.0,
+        "mean_recall@10": 0.0,
+        "MAP": 0.0,
+        "MRR": 0.0,
+        "avg_query_time": 0.0025696754455566406,
+        "total_queries": 3,
+        "use_reranking": false
+      }
+    }
+  },
+  "bm25_parameters": {
+    "k1=1.2, b=0.75": {
+      "mean_precision@5": 0.0,
+      "mean_precision@10": 0.0,
+      "mean_recall@10": 0.0,
+      "MAP": 0.0,
+      "MRR": 0.0,
+      "avg_query_time": 0.5133400758107504,
+      "total_queries": 3,
+      "use_reranking": true
+    },
+    "k1=1.5, b=0.75": {
+      "mean_precision@5": 0.0,
+      "mean_precision@10": 0.0,
+      "mean_recall@10": 0.0,
+      "MAP": 0.0,
+      "MRR": 0.0,
+      "avg_query_time": 0.48943519592285156,
+      "total_queries": 3,
+      "use_reranking": true
+    },
+    "k1=2.0, b=0.75": {
+      "mean_precision@5": 0.0,
+      "mean_precision@10": 0.0,
+      "mean_recall@10": 0.0,
+      "MAP": 0.0,
+      "MRR": 0.0,
+      "avg_query_time": 0.6072852611541748,
+      "total_queries": 3,
+      "use_reranking": true
+    },
+    "k1=1.5, b=0.5": {
+      "mean_precision@5": 0.0,
+      "mean_precision@10": 0.0,
+      "mean_recall@10": 0.0,
+      "MAP": 0.0,
+      "MRR": 0.0,
+      "avg_query_time": 0.49497167269388836,
+      "total_queries": 3,
+      "use_reranking": true
+    },
+    "k1=1.5, b=1.0": {
+      "mean_precision@5": 0.0,
+      "mean_precision@10": 0.0,
+      "mean_recall@10": 0.0,
+      "MAP": 0.0,
+      "MRR": 0.0,
+      "avg_query_time": 0.551016648610433,
+      "total_queries": 3,
+      "use_reranking": true
+    }
+  }
+}
