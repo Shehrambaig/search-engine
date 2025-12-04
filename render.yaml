@@ -7,8 +7,6 @@ services:
     buildCommand: "pip install -r requirements.txt && python -m spacy link en_core_web_sm en_core_web_sm || python -m spacy download en_core_web_sm"
     startCommand: "uvicorn api:app --host 0.0.0.0 --port $PORT"
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.0
       - key: DATA_PATH
         value: data/raw/Articles.csv
       - key: INDEX_DIR

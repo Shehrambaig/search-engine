@@ -37,14 +37,11 @@ venv.bak/
 .DS_Store
 
 # Data files (exclude raw data but keep folder structure)
-data/raw/*.csv
-data/raw/*.json
-data/raw/*.txt
+
 !data/raw/.gitkeep
 
 # Processed data (large files)
-data/processed/*.pkl
-data/processed/*.csv
+
 !data/processed/.gitkeep
 
 # Results
