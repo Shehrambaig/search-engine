@@ -394,58 +394,60 @@ For dynamic systems, cache invalidation strategies would include:
 ### System Components
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                    User Query                        │
-└────────────────────┬────────────────────────────────┘
+
+                 User Query                        
+
                      │
                      ▼
-┌─────────────────────────────────────────────────────┐
-│                  LRU Cache Check                     │
-│  - Check if query exists in cache                   │
-│  - If hit: return cached results (1ms)              │
-└────────────────────┬────────────────────────────────┘
-                     │ Cache Miss
+
+                  LRU Cache Check                    
+  - Check if query exists in cache                   
+  - If hit: return cached results (1ms)
+
+                    Cache Miss   
+
+                     │ 
                      ▼
-┌─────────────────────────────────────────────────────┐
-│              Text Preprocessing                      │
-│  - Tokenization (NLTK)                              │
-│  - Lowercasing                                      │
-│  - Stopword removal (optional)                      │
-│  - Lemmatization with spaCy (optional)              │
-└────────────────────┬────────────────────────────────┘
+
+            Text Preprocessing                     
+            Tokenization (NLTK)                              
+            Lowercasing                                      
+            Stopword removal (optional)                      
+            Lemmatization with spaCy (optional)
+
                      │
                      ▼
-┌─────────────────────────────────────────────────────┐
-│                 BM25 Retrieval                       │
-│  - Compute BM25 scores for all documents            │
-│  - Select top-k candidates (k=100)                  │
-│  - Time: ~50ms                                      │
-└────────────────────┬────────────────────────────────┘
+
+           BM25 Retrieval                       
+           Compute BM25 scores for all documents            
+           Select top-k candidates (k=100)                  
+            Time: ~50ms                                      
+
                      │
                      ▼
-┌─────────────────────────────────────────────────────┐
-│              Neural Reranking                        │
-│  1. Encode query with Sentence Transformer          │
-│  2. Encode top-k candidates                         │
-│  3. Compute cosine similarities                     │
-│  4. Normalize BM25 and neural scores                │
-│  5. Compute hybrid scores                           │
-│  6. Sort by hybrid score                            │
-│  - Time: ~250ms                                     │
-└────────────────────┬────────────────────────────────┘
+
+              Neural Reranking                        
+      Encode query with Sentence Transformer          
+      Encode top-k candidates                         
+      Compute cosine similarities                     
+      Normalize BM25 and neural scores                
+      Compute hybrid scores                           
+      Sort by hybrid score                            
+      Time: ~250ms                                     
+
                      │
                      ▼
-┌─────────────────────────────────────────────────────┐
-│              Result Preparation                      │
-│  - Select top-10 documents                          │
-│  - Add metadata (scores, doc_id, timestamps)        │
-│  - Store in cache                                   │
-└────────────────────┬────────────────────────────────┘
+
+              Result Preparation                      
+  - Select top-10 documents                          
+  - Add metadata (scores, doc_id, timestamps)        
+  - Store in cache                                   
+
                      │
                      ▼
-┌─────────────────────────────────────────────────────┐
-│                Return Results                        │
-└─────────────────────────────────────────────────────┘
+
+               Return Results                        
+
 ```
 
 ### Index Structure
